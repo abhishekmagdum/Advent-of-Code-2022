@@ -23,7 +23,8 @@ int main()
     char c2;
     char c3;
 
-    int sum = 0;
+    int sumPart1 = 0;
+    int sumPart2 = 0;
 
  
     // opening file in reading mode
@@ -43,16 +44,18 @@ int main()
 
         printf("%d %d %d %d \n", num1, num2, num3, num4);
 
-        if((num1 >= num3 && num2 <= num4) || (num3 >= num1 && num4 <= num2)) sum += 1;
+        if((num1 >= num3 && num2 <= num4) || (num3 >= num1 && num4 <= num2)) sumPart1 += 1;
 
-        //puts(name);
+        if((num2 >= num3) && (num1 <= num4)) sumPart2 += 1;
+
+        puts(name);
         //printf("%c %c \n", name[0], name[2]);
     }
 
     // close file
     fclose(filePtr);
 
-    printf("Sum is: %d \n", sum);
+    printf("Sum Part1 is: %d, and Sum Part2 is: %d \n", sumPart1, sumPart2);
 
     return 0;
 }
